@@ -1,5 +1,5 @@
-#$headless = Headless.new
-#$headless.start
+$headless = Headless.new
+$headless.start
 $chrome = Watir::Browser.new :chrome
 $firefox = Watir::Browser.new :firefox
 
