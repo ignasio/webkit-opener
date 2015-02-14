@@ -1,11 +1,11 @@
 class MainController < ApplicationController
   def index
-    browser = $chrome
+    browser = $phantom
     begin
       browser.goto params[:url]
     rescue Selenium::WebDriver::Error::WebDriverError,Errno::ECONNREFUSED
-      browser = Watir::Browser.new :chrome
-      $chrome = browser
+      browser = Watir::Browser.new :phantomjs
+      $phantom = browser
       browser.goto params[:url]
     end
     render :text=> browser.html
